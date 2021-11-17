@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F4F4F4"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="5dp"
+                tools:text="ahskasl"
+                app:layout_constraintTop_toTopOf="@+id/constraint"
+                app:layout_constraintStart_toStartOf="@+id/constraint"
+                app:layout_constraintEnd_toEndOf="@+id/constraint"/>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                tools:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="@+id/constraint"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="Mark"
+                app:layout_constraintStart_toStartOf="@+id/constraint"
+                app:layout_constraintTop_toBottomOf="@+id/image"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="20.12.2021"
+                app:layout_constraintStart_toStartOf="@+id/constraint"
+                app:layout_constraintTop_toBottomOf="@+id/author"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="Политика"
+                app:layout_constraintStart_toStartOf="@+id/constraint"
+                app:layout_constraintTop_toBottomOf="@+id/date"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="20.12.2021"
+                android:textAlignment="inherit"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintEnd_toEndOf="@id/constraint"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                android:layout_margin="10dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

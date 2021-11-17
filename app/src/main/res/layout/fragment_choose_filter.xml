@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.ChooseFilter">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/group_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                >
+
+                <RadioButton
+                    android:id="@+id/radioButtonDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dp"
+                    android:text="@string/No_filter"
+                    android:textAlignment="textEnd" />
+
+                    <RadioButton
+                        android:id="@+id/radioDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/date"
+                        android:textAlignment="textEnd" />
+
+                    <RadioButton
+                        android:id="@+id/radioAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/name"
+                        android:textAlignment="textEnd" />
+
+                    <RadioButton
+                        android:id="@+id/radioTopic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:padding="5dp"
+                        android:text="@string/topic" />
+                </RadioGroup>
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/ed_tv"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/group_radio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:hint="@string/dateForEd"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:inputType="date"
+                android:maxLines="1"
+                android:imeOptions="actionDone"/>
+
+            <EditText
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ed_tv"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:hint="@string/AuthorForEd"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionDone"/>
+
+            <EditText
+                android:id="@+id/topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ed_tv"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/author"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:hint="@string/topicForEd"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionDone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
