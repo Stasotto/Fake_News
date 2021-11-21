@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsPlace : Fragment() {
 
-    private val datModel: DataViewModel by viewModel()
+    private val recyclerViewModel: DataViewModel by viewModel()
     private val adapterRes: Adapter by lazy { Adapter() }
     private lateinit var binding: FragmentNewsPlaceBinding
 
@@ -43,7 +43,7 @@ class NewsPlace : Fragment() {
             }
         }
 
-        datModel.dataRecycler.observe(viewLifecycleOwner, { dataList ->
+        recyclerViewModel.dataRecycler.observe(viewLifecycleOwner, { dataList ->
             adapterRes.addNews(dataList)
         })
     }
@@ -59,7 +59,7 @@ class NewsPlace : Fragment() {
 
         filter.setItemClickListener { typeFilter, configFilter ->
             binding.filter.text = typeFilter
-            datModel.filterNews(typeFilter, configFilter)
+            recyclerViewModel.filterNews(typeFilter, configFilter)
         }
     }
 }
