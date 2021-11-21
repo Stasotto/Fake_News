@@ -30,31 +30,11 @@ class ChooseFilter : BottomSheetDialogFragment() {
         initBinding(view)
     }
 
-    // Не знаю как упростить эту часть кода:(
-//    private fun initBinding(view: View) {
-//        binding = FragmentChooseFilterBinding.bind(view).apply {
-//            radioButtonDefault.setOnClickListener {
-//                itemClickListener?.invoke(radioButtonDefault.text.toString(), "Не имеет значения")
-//                dismiss()
-//            }
-//
-//            radioDate.setOnClickListener {
-//                date.isVisible = true
-//                selectFilter(radioDate, date)
-//            }
-//
-//            radioAuthor.setOnClickListener {
-//                author.visibility = View.VISIBLE
-//                selectFilter(radioAuthor, author)
-//            }
-//
-//            radioTopic.setOnClickListener {
-//                topic.visibility = View.VISIBLE
-//                selectFilter(radioTopic, topic)
-//            }
-//        }
-//
-//    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("message", binding.groupRadio.checkedRadioButtonId)
+    }
+
     private fun initBinding(view: View) {
         binding = FragmentChooseFilterBinding.bind(view).apply {
             groupRadio.setOnCheckedChangeListener { _, i ->
@@ -63,7 +43,8 @@ class ChooseFilter : BottomSheetDialogFragment() {
                     R.id.radioButtonDefault -> {
                         itemClickListener?.invoke(
                             radioButtonDefault.text.toString(),
-                            "Не имеет значения")
+                            "Не имеет значения"
+                        )
                         dismiss()
                     }
 
