@@ -6,7 +6,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 
 import org.koin.dsl.module
 
-val viewModelsMode = module {
+val viewModelsModule = module {
 
     viewModel {
         DataViewModel(interactor = get())

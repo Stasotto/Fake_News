@@ -9,8 +9,6 @@ import com.example.fakenews.databinding.NewsItemBinding
 
 class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    private val binding: NewsItemBinding by lazy { NewsItemBinding.bind(itemView) }
-
     companion object {
         fun from(parent: ViewGroup): NewsHolder {
             return NewsHolder(
@@ -19,6 +17,9 @@ class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             )
         }
     }
+    // как здесь использовать делегат
+    private val binding: NewsItemBinding by lazy { NewsItemBinding.bind(itemView) }
+
 
     fun bind(item: News) = with(binding) {
         title.text = item.title

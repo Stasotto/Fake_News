@@ -1,8 +1,10 @@
 package com.example.fakenews.presentation
 
 import android.app.Application
-import com.example.fakenews.data.di.dataModule
-import com.example.fakenews.presentation.di.viewModelsMode
+import com.example.fakenews.data.di.databaseModule
+import com.example.fakenews.domain.di.domainModule
+import com.example.fakenews.presentation.di.viewModelsModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class FakeNewsApplication: Application() {
@@ -13,10 +15,13 @@ class FakeNewsApplication: Application() {
     }
 
     private fun initKoin(){
+
         startKoin {
+            androidContext(this@FakeNewsApplication)
             modules(
-                viewModelsMode,
-                dataModule
+                databaseModule,
+                domainModule,
+                viewModelsModule,
             )
         }
     }

@@ -4,9 +4,9 @@ import com.example.fakenews.R
 import com.example.fakenews.domain.NewsInteractor
 import com.example.fakenews.presentation.recycler.News
 
-class DataSource: NewsInteractor {
+class DataSource{
 
-    private var dataList: List<News> = mutableListOf(
+     var dataList: List<News> = mutableListOf(
         News(
             "Он был там!",
             R.drawable.ic_launcher_foreground,
@@ -63,6 +63,4 @@ class DataSource: NewsInteractor {
                 |Хотя коллектив независимых разработчиков не смог достичь тех же вершин, которые доступны Nintendo, подобраться ему удалось довольно близко.""".trimMargin()
         )
     )
-
-    override fun loadNews() = dataList
 }
